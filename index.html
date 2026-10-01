@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 40px 50px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      max-width: 90%;
+      animation: fadeIn 0.8s ease-out;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    p {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+    button {
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #764ba2;
+      background: #ffffff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+    button:active {
+      transform: translateY(0);
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="title">Hello, World!</h1>
+    <p id="subtitle">Chào mừng bạn đến với trang web đầu tiên.</p>
+    <button id="btnClick">Bấm vào đây 🎉</button>
+  </div>
+
+  <script>
+    const title = document.getElementById('title');
+    const btn = document.getElementById('btnClick');
+    let isVietnamese = false;
+
+    btn.addEventListener('click', () => {
+      isVietnamese = !isVietnamese;
+      if (isVietnamese) {
+        title.textContent = 'Xin chào Thế Giới!';
+        btn.textContent = 'Đổi lại tiếng Anh 🔄';
+      } else {
+        title.textContent = 'Hello, World!';
+        btn.textContent = 'Bấm vào đây 🎉';
+      }
+    });
+  </script>
+</body>
+</html>
